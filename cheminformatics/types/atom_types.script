@@ -1,0 +1,23 @@
+// Custom Atom types for the cheminformatics project
+
+// Types for different atoms
+CHEMICAL_ATOM <- NODE
+H <- CHEMICAL_ATOM
+C <- CHEMICAL_ATOM
+O <- CHEMICAL_ATOM
+N <- CHEMICAL_ATOM
+S <- CHEMICAL_ATOM
+P <- CHEMICAL_ATOM
+
+// Types for different chemical bonds
+CHEMICAL_BOND <- UNORDERED_LINK
+SB <- CHEMICAL_BOND
+DB <- CHEMICAL_BOND
+TB <- CHEMICAL_BOND
+AB <- CHEMICAL_BOND
+
+// Type for molecules
+MOLECULE <- UNORDERED_LINK
+
+// Type for reactions
+REACTION <- UNORDERED_LINK
