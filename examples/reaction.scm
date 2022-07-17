@@ -5,6 +5,11 @@
 ; reactions. This will search the AtomSpace for anything matching
 ; the query, and then create a new molecule whenever it finds the
 ; matching pattern.
+;
+; To run this example, start the guile shell in the `examples` directory
+; (the directory holding this file!) and then say
+;   `(load "reaction.scm")`
+; It will print the results.
 
 (use-modules (opencog) (opencog cheminformatics))
 (use-modules (opencog exec))
@@ -27,8 +32,8 @@
 			; Untyped variables that will match to anything
 			(Variable "carboxy moiety")
 			(Variable "hydroxy moiety")
-			(Glob "rest of carboxy")
-			(Glob "rest of hydroxy")
+			; (Glob "rest of carboxy")
+			; (Glob "rest of hydroxy")
 		)
 		; Premise: Functional groups found in some educts
 		(AndLink
@@ -38,14 +43,14 @@
 				(SB (Variable "$varC1") (Variable "$varO2"))
 				(SB (Variable "$varO2") (Variable "$varH1"))
 				(SB (Variable "$varC1") (Variable "carboxy moiety"))
-				(Glob "rest of carboxy")
+				; (Glob "rest of carboxy")
 			)
 			; Look for hydroxyl group
 			(Molecule
 				(SB (Variable "$varC2") (Variable "$varO3"))
 				(SB (Variable "$varO3") (Variable "$varH2"))
 				(SB (Variable "$varC2") (Variable "hydroxy moiety"))
-				(Glob "rest of hydroxy")
+				; (Glob "rest of hydroxy")
 			)
 		)
 		; Clause: Formation of products
@@ -57,10 +62,10 @@
 				(SB (Variable "$varO2") (Variable "$varC2"))
 
 				(SB (Variable "$varC1") (Variable "carboxy moiety"))
-				(Glob "rest of carboxy")
+				; (Glob "rest of carboxy")
 
 				(SB (Variable "$varC2") (Variable "hydroxy moiety"))
-				(Glob "rest of hydroxy")
+				; (Glob "rest of hydroxy")
 			)
 			; Produce water
 			(Molecule
@@ -81,7 +86,7 @@
 	(SB (O "oxy two") (H "carboxyl proton"))
 	; Some nonsense moiety, for pattern matching only.
 	(SB (C "some carb") (Fe "Bushehr"))
-	(SB (Fe "Bushehr") (Ni "phase II"))
+	; (SB (Fe "Bushehr") (Ni "phase II"))
 )
 
 ; A hydroxyl group
@@ -89,11 +94,12 @@
 	(SB (C "hydroxyl carbon") (O "hydroxyl oxy"))
 	(SB (O "hydroxyl oxy") (H "hydroxyl proton"))
 	; Another nonsense moiety, for pattern matching
-	(SB (O "hydroxyl oxy") (Zn "Iranian"))
-	(SB (Zn "Iranian") (Cu "Uranium"))
+	(SB (C "hydroxyl carbon") (Zn "Iranian"))
+	; (SB (Zn "Iranian") (Cu "Uranium"))
 )
 
 ; Perform the reaction
+(display "Here is the result of the reaction:\n")
 (cog-execute! esterification)
 
 ; ------------------------------------------------
