@@ -32,7 +32,7 @@
 			; Untyped variables that will match to anything
 			(Variable "carboxy moiety")
 			(Variable "hydroxy moiety")
-			; (Glob "rest of carboxy")
+			(Glob "rest of carboxy")
 			; (Glob "rest of hydroxy")
 		)
 		; Premise: Functional groups found in some educts
@@ -43,7 +43,7 @@
 				(SB (Variable "$varC1") (Variable "$varO2"))
 				(SB (Variable "$varO2") (Variable "$varH1"))
 				(SB (Variable "$varC1") (Variable "carboxy moiety"))
-				; (Glob "rest of carboxy")
+				(Glob "rest of carboxy")
 			)
 			; Look for hydroxyl group
 			(Molecule
@@ -62,7 +62,7 @@
 				(SB (Variable "$varO2") (Variable "$varC2"))
 
 				(SB (Variable "$varC1") (Variable "carboxy moiety"))
-				; (Glob "rest of carboxy")
+				(Glob "rest of carboxy")
 
 				(SB (Variable "$varC2") (Variable "hydroxy moiety"))
 				; (Glob "rest of hydroxy")
@@ -86,7 +86,7 @@
 	(SB (O "oxy two") (H "carboxyl proton"))
 	; Some nonsense moiety, for pattern matching only.
 	(SB (C "some carb") (Fe "Bushehr"))
-	; (SB (Fe "Bushehr") (Ni "phase II"))
+	(SB (Fe "Bushehr") (Ni "phase II"))
 )
 
 ; A hydroxyl group
