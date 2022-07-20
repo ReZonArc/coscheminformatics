@@ -24,7 +24,6 @@
 			(TypedVariable (Variable "$varH1") (Type 'H))
 			(TypedVariable (Variable "$varH2") (Type 'H))
 			(TypedVariable (Variable "$varC1") (Type 'C))
-			(TypedVariable (Variable "$varC2") (Type 'C))
 			(TypedVariable (Variable "$varO1") (Type 'O))
 			(TypedVariable (Variable "$varO2") (Type 'O))
 			(TypedVariable (Variable "$varO3") (Type 'O))
@@ -33,7 +32,7 @@
 			(Variable "carboxy moiety")
 			(Variable "hydroxy moiety")
 			(Glob "rest of carboxy")
-			; (Glob "rest of hydroxy")
+			(Glob "rest of hydroxy")
 		)
 		; Premise: Functional groups found in some educts
 		(AndLink
@@ -47,10 +46,9 @@
 			)
 			; Look for hydroxyl group
 			(Molecule
-				(SB (Variable "$varC2") (Variable "$varO3"))
 				(SB (Variable "$varO3") (Variable "$varH2"))
-				(SB (Variable "$varC2") (Variable "hydroxy moiety"))
-				; (Glob "rest of hydroxy")
+				(SB (Variable "$varO3") (Variable "hydroxy moiety"))
+				(Glob "rest of hydroxy")
 			)
 		)
 		; Clause: Formation of products
@@ -59,13 +57,12 @@
 			(Molecule
 				(DB (Variable "$varC1") (Variable "$varO1"))
 				(SB (Variable "$varC1") (Variable "$varO2"))
-				(SB (Variable "$varO2") (Variable "$varC2"))
 
 				(SB (Variable "$varC1") (Variable "carboxy moiety"))
 				(Glob "rest of carboxy")
 
-				(SB (Variable "$varC2") (Variable "hydroxy moiety"))
-				; (Glob "rest of hydroxy")
+				(SB (Variable "$varO2") (Variable "hydroxy moiety"))
+				(Glob "rest of hydroxy")
 			)
 			; Produce water
 			(Molecule
@@ -91,11 +88,11 @@
 
 ; A hydroxyl group
 (Molecule
-	(SB (C "hydroxyl carbon") (O "hydroxyl oxy"))
 	(SB (O "hydroxyl oxy") (H "hydroxyl proton"))
 	; Another nonsense moiety, for pattern matching
+	(SB (C "hydroxyl carbon") (O "hydroxyl oxy"))
 	(SB (C "hydroxyl carbon") (Zn "Iranian"))
-	; (SB (Zn "Iranian") (Cu "Uranium"))
+	(SB (Zn "Iranian") (Cu "Uranium"))
 )
 
 ; Perform the reaction
