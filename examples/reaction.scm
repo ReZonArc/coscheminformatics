@@ -42,8 +42,19 @@
 				(SB (Variable "$varC1") (Variable "$varO2"))
 				(SB (Variable "$varO2") (Variable "$varH1"))
 				(SB (Variable "$varC1") (Variable "carboxy moiety"))
+
+				; Globs match one or more bonds.  To match zero,
+				; change the lower bound by declaring it lik this:
+				; (TypedVariable (Glob "rest of carboxy")
+				;     (Interval (Number 0) (Number -1)))
 				(Glob "rest of carboxy")
 			)
+
+			; The above will happily match `$varO2` and `carboxy moiety`
+			; to the same atom. But we don't want that, so demand that
+			; they be distinct.
+			(Not (Identical (Variable "$varO2") (Variable "carboxy moiety")))
+
 			; Look for hydroxyl group
 			(Molecule
 				(SB (Variable "$varO3") (Variable "$varH2"))
@@ -81,8 +92,8 @@
 	(DB (C "some carb") (O "oxy one"))
 	(SB (C "some carb") (O "oxy two"))
 	(SB (O "oxy two") (H "carboxyl proton"))
-	; Some nonsense moiety, for pattern matching only.
 	(SB (C "some carb") (Fe "Bushehr"))
+	; Some nonsense moiety, for pattern matching only.
 	(SB (Fe "Bushehr") (Ni "phase II"))
 )
 
