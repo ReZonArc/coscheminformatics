@@ -90,9 +90,9 @@
 ;
 ; Carboxyl group
 (Molecule
-	(DB (C "the carboxyl carb") (O "oxy one"))
-	(SB (C "the carboxyl carb") (O "oxy two"))
-	(SB (O "oxy two") (H "carboxyl proton"))
+	(DB (C "the carboxyl carb") (O "oxy two"))
+	(SB (C "the carboxyl carb") (O "oxy one"))
+	(SB (O "oxy one") (H "carboxyl proton"))
 	(SB (C "the carboxyl carb") (Fe "carbox R"))
 	; Some nonsense moiety, for pattern matching only.
 	(SB (Fe "carbox R") (Ni "more carbox junk"))
