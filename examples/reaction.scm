@@ -62,6 +62,17 @@
 				(SB (Variable "$hydroxO1") (Variable "hydroxy moiety"))
 				(Glob "rest of hydroxy")
 			)
+
+			; The above will match the OH's in both groups.
+			; They should be kept distinct.
+			(Not (Identical (Variable "$carboxyO1") (Variable "$hydroxO1")))
+			(Not (Identical (Variable "$carboxyH1") (Variable "$hydroxH1")))
+
+			; A different way to say the same thing.
+			; Either above or below is sufficient to disambiguate the OH.
+			(Not (Identical
+				(SB (Variable "$hydroxO1") (Variable "$hydroxH1"))
+				(SB (Variable "$carboxyO1") (Variable "$carboxyH1"))))
 		)
 		; Clause: Formation of products
 		(AndLink
