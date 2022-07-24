@@ -37,6 +37,7 @@
 		)
 		; Premise: Functional groups found in some educts
 		(AndLink
+			; ------------------------------------------------------
 			; Look for carboxyl group
 			(Molecule
 				(DB (Variable "$carboxyC1") (Variable "$carboxyO2"))
@@ -56,6 +57,7 @@
 			; they be distinct.
 			(Not (Identical (Variable "$carboxyO1") (Variable "carboxy moiety")))
 
+			; ------------------------------------------------------
 			; Look for hydroxyl group
 			(Molecule
 				(SB (Variable "$hydroxO1") (Variable "$hydroxH1"))
@@ -63,13 +65,23 @@
 				(Glob "rest of hydroxy")
 			)
 
-			; The above will match the OH's in both groups.
-			; They should be kept distinct.
+			; As before, the above will happily stuff the hydrogen into
+			; the moiety slot (thus using it twice). Prevent that by
+			; insisting these two must differ.
+			(Not (Identical (Variable "$hydroxH1") (Variable "hydroxy moiety")))
+
+			; -----
+			; And another constraint: the above pattern is so simple, it
+			; will find hydroxyl groups everywhere. In particular, it will
+			; find the OH in the carboxyl. So make sure that doesn't happen
+			; by insisting that the OH's be fiferent from one-another.
+			; Force them to be distinct.
 			(Not (Identical (Variable "$carboxyO1") (Variable "$hydroxO1")))
 			(Not (Identical (Variable "$carboxyH1") (Variable "$hydroxH1")))
 
 			; A different way to say the same thing.
-			; Either above or below is sufficient to disambiguate the OH.
+			; Either the two Not's above, or the one Not below, is
+			; sufficient to disambiguate the OH.
 			(Not (Identical
 				(SB (Variable "$hydroxO1") (Variable "$hydroxH1"))
 				(SB (Variable "$carboxyO1") (Variable "$carboxyH1"))))
