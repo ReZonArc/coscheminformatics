@@ -19,7 +19,7 @@ ADD_LIBRARY (cheminformatics-types SHARED
 ADD_DEPENDENCIES(cheminformatics-types cheminformatics_atom_types)
 
 TARGET_LINK_LIBRARIES(cheminformatics-types
-	${ATOMSPACE_atomtypes_LIBRARY}
+	${ATOMSPACE_LIBRARIES}
 )
 
 INSTALL (TARGETS cheminformatics-types
