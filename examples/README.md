@@ -25,6 +25,8 @@ Change to the `python` directory and use the Python 3 interpreter to run a scrip
 
 ## Jupyter notebooks
 
-Change to the `jupyter` directory, start the Jupyter server and use the automatically opened web GUI to inspect and run a notebook:
+Change to the `jupyter` directory, start a Jupyter server and use the automatically opened web GUI to inspect and run a notebook:
 
-`> jupyter-notebook`
+```
+> jupyter-notebook
+```
