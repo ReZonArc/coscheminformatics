@@ -10,10 +10,16 @@ The following is a short description how to run the examples.
 Change to the `scheme` directory and use the Guile interpreter to load a script:
 
 ```
+> guile -s example.scm
+```
+Alternately, to work at the command prompts:
+```
 > guile
 (use-modules (opencog) (opencog cheminformatics))
 (load "example.scm")
 ```
+The current examples are:
+* [reaction.scm](scheme/reaction.scm) - an esterification reaction.
 
 ## Python
 

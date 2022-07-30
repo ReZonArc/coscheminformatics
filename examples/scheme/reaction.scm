@@ -61,7 +61,7 @@
 			; Look for hydroxyl group
 			(Molecule
 				(SB (Variable "$hydroxO1") (Variable "$hydroxH1"))
-				(SB (Variable "$hydroxO1") (Variable "hydroxy moiety"))
+				(SB (Variable "hydroxy moiety") (Variable "$hydroxO1"))
 				(Glob "rest of hydroxy")
 			)
 
@@ -132,8 +132,9 @@
 )
 
 ; Perform the reaction
-(display "Here is the result of the reaction:\n")
-(cog-execute! esterification)
+(define products (cog-execute! esterification))
+
+(format #t "The reaction products are: ~A\n" products)
 
 ; ------------------------------------------------
 ; The end.
