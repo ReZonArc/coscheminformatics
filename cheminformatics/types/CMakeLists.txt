@@ -12,7 +12,7 @@ ADD_CUSTOM_TARGET(cheminformatics_atom_types DEPENDS atom_types.h)
 INCLUDE_DIRECTORIES(${CMAKE_BINARY_DIR})
 
 ADD_LIBRARY (cheminformatics-types SHARED
-	CheminformaticsTypes
+	CheminformaticsTypes.cc
 )
 
 # Without this, parallel make will race and crap up the generated files.
