@@ -24,6 +24,6 @@ Examples
 Examples can be found in the [examples](examples) directory.
 
 If you run python virtualenv, and are experiencing issues with undefined
-symbols, then be for to add `/usr/local/lib/python3.11/dist-packages/`
-to your `PYTHON_PATH` and to add `/usr/local/lib/opencog/` to your
+symbols, then try adding `/usr/local/lib/python3.11/dist-packages/`
+to your `PYTHON_PATH` and adding `/usr/local/lib/opencog/` to your
 `LD_LIBRARY_PATH`.
