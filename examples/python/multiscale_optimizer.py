@@ -29,8 +29,16 @@ import json
 from collections import defaultdict
 
 # Import our custom modules
-from inci_optimizer import INCISearchSpaceReducer, FormulationConstraint
-from attention_allocation import AttentionAllocationManager, FormulationNode
+try:
+    from inci_optimizer import INCISearchSpaceReducer, FormulationConstraint
+    from attention_allocation import AttentionAllocationManager, FormulationNode
+except ImportError:
+    # For direct execution, adjust import path
+    import sys
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from inci_optimizer import INCISearchSpaceReducer, FormulationConstraint
+    from attention_allocation import AttentionAllocationManager, FormulationNode
 
 class OptimizationScale(Enum):
     """Scales of optimization in multiscale skin model"""
