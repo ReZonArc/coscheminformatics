@@ -3,10 +3,45 @@
 This directory contains examples of defining atoms, bonds, molecules
 and reactions in [Atomese](https://wiki.opencog.org/w/Atomese)
 using several different execution environments: 1) Scheme, 2) Python,
-3) Python within Jupyter notebooks.  Recall that Atomese can be freely
+3) Python within Jupyter notebooks. It also includes specialized
+examples for cosmetic chemistry applications.
+
+Recall that Atomese can be freely
 mixed between scheme and python: under the covers, the data is always in
 Atomese, and not in the programming language environment itself.
 (See the examples in the core AtomSpace git repo for demos.)
+
+## Cosmetic Chemistry Examples
+
+### Python Cosmetic Examples
+
+**[cosmetic_intro_example.py](python/cosmetic_intro_example.py)**
+- Basic introduction to cosmetic chemistry atom types
+- Simple ingredient and formulation creation
+- Demonstrates cosmetic-specific properties and interactions
+
+**[cosmetic_chemistry_example.py](python/cosmetic_chemistry_example.py)** 
+- Advanced cosmetic formulation modeling
+- Comprehensive ingredient database creation
+- Formulation analysis and optimization
+- Regulatory compliance checking
+
+```bash
+$ python3 cosmetic_intro_example.py
+$ python3 cosmetic_chemistry_example.py
+```
+
+### Scheme Cosmetic Examples
+
+**[cosmetic_formulation.scm](scheme/cosmetic_formulation.scm)**
+- Complex cosmetic formulation modeling in Scheme
+- Ingredient compatibility matrix analysis  
+- Advanced property assessment and stability analysis
+- Demonstrates pattern matching for formulation optimization
+
+```bash
+$ guile -s cosmetic_formulation.scm
+```
 
 ## Python
 
