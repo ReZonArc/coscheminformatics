@@ -17,6 +17,12 @@ This is an early attempt to use OpenCog for cheminformatics, with specialized su
 - **Property Modeling**: pH, viscosity, stability, texture, color, scent, SPF properties
 - **Interaction Analysis**: Compatibility, incompatibility, synergy, and antagonism relationships
 - **Safety & Regulatory**: Safety assessments, allergen classifications, concentration limits
+- **NEW: OpenCog Multiscale Optimization**: Advanced cognitive architecture integration featuring:
+  - INCI-driven search space reduction with regulatory compliance
+  - ECAN-inspired attention allocation for computational resource management
+  - Multiscale constraint optimization from molecular to organ level
+  - Probabilistic reasoning for uncertainty handling
+  - Evolutionary optimization with multi-objective fitness functions
 
 Building and Installing
 =======================
@@ -37,6 +43,7 @@ this project. Building is as "usual":
 ## Documentation
 
 - [Cosmetic Chemistry Guide](docs/COSMETIC_CHEMISTRY.md) - Comprehensive guide to cosmetic chemistry specializations
+- **NEW: [OpenCog Multiscale Optimization](docs/OPENCOG_MULTISCALE_OPTIMIZATION.md)** - Advanced cognitive architecture integration for cosmeceutical formulation optimization
 
 Examples
 ========
@@ -46,6 +53,12 @@ Examples can be found in the [examples](examples) directory.
 - **Python**: 
   - [cosmetic_intro_example.py](examples/python/cosmetic_intro_example.py) - Basic cosmetic ingredient and formulation creation
   - [cosmetic_chemistry_example.py](examples/python/cosmetic_chemistry_example.py) - Advanced cosmetic formulation analysis
+  - **NEW: OpenCog Multiscale Optimization Suite:**
+    - [inci_optimizer.py](examples/python/inci_optimizer.py) - INCI-driven search space reduction algorithms
+    - [attention_allocation.py](examples/python/attention_allocation.py) - ECAN-inspired attention allocation system
+    - [multiscale_optimizer.py](examples/python/multiscale_optimizer.py) - Complete multiscale constraint optimization engine
+    - [demo_opencog_multiscale.py](examples/python/demo_opencog_multiscale.py) - Comprehensive system demonstration
+    - [test_multiscale_optimization.py](examples/python/test_multiscale_optimization.py) - Validation test suite
 - **Scheme**: 
   - [cosmetic_formulation.scm](examples/scheme/cosmetic_formulation.scm) - Complex formulation modeling and compatibility analysis
 
